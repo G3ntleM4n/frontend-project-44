@@ -2,5 +2,7 @@
 [![Actions Status](https://github.com/G3ntleM4n/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/G3ntleM4n/frontend-project-44/actions)
 ### CodeClimate Badges:
 [![Maintainability](https://api.codeclimate.com/v1/badges/7d735a79f02ce3d770c6/maintainability)](https://codeclimate.com/github/G3ntleM4n/frontend-project-44/maintainability)
-### asciinema.org recording:
+### asciinema.org record of brain-even:
 [![asciicast](https://asciinema.org/a/orjnStCP9WKRs2RLzeAvJQwox.svg)](https://asciinema.org/a/orjnStCP9WKRs2RLzeAvJQwox)
+### asciinema.org record of brain-calc:
+[![asciicast](https://asciinema.org/a/03Ok2V8stmaVIw1qZ3zi1hsTm.svg)](https://asciinema.org/a/03Ok2V8stmaVIw1qZ3zi1hsTm)
