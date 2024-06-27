@@ -11,7 +11,7 @@ console.log('Welcome to the Brain Games!');
 const userName = getUserName();
 greeting(userName);
 
-while (counterOfCorrectAnswers < 30) {
+while (counterOfCorrectAnswers < 3) {
   const questionNumber = gameQuestion(1, 100);
   const userAnswer = answer();
 
