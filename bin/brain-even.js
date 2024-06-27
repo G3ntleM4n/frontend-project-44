@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import {
-  gameQuestion, answer, getUserName, greeting, isEvenNumber,
-} from '../src/brain-even-logic.js';
+  randomNumber, answer, getUserName, greeting, isEvenNumber,
+  isRightAnswer,
+} from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
 let isCorrect = true;
@@ -10,22 +11,26 @@ let isCorrect = true;
 console.log('Welcome to the Brain Games!');
 const userName = getUserName();
 greeting(userName);
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
-  const questionNumber = gameQuestion(1, 100);
-  const userAnswer = answer();
+  const questionNumber = randomNumber(1, 100);
+  console.log(`Question: ${questionNumber}`);
+  const userAnswer = answer().toLowerCase();
 
-  if (isEvenNumber(questionNumber) && userAnswer.toLowerCase() !== 'yes') {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
-    isCorrect = false;
-    break;
-  } else if (!isEvenNumber(questionNumber) && userAnswer.toLowerCase() !== 'no') {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
-    isCorrect = false;
+  if (isEvenNumber(questionNumber)) {
+    const rightAnswer = 'yes';
+    isCorrect = isRightAnswer(userAnswer, userName, rightAnswer);
+  } else if (!isEvenNumber(questionNumber)) {
+    const rightAnswer = 'no';
+    isCorrect = isRightAnswer(userAnswer, userName, rightAnswer);
+  }
+
+  if (isCorrect) {
+    counterOfCorrectAnswers += 1;
+  } else {
     break;
   }
-  console.log('Correct!');
-  counterOfCorrectAnswers += 1;
 }
 
 if (isCorrect) {
