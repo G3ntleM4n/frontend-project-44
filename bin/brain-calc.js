@@ -1,16 +1,13 @@
 #!/usr/bin/env node
 
 import {
-  randomNumber, answer, getUserName, greeting,
-  isRightAnswer,
+  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
 let isCorrect = true;
 
-console.log('Welcome to the Brain Games!');
-const userName = getUserName();
-greeting(userName);
+const userName = getUserNameAndGreet();
 console.log('What is the result of the expression?');
 
 while (counterOfCorrectAnswers < 3) {

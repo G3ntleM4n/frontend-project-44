@@ -1,16 +1,13 @@
 #!/usr/bin/env node
 
 import {
-  randomNumber, answer, getUserName, greeting, isEvenNumber,
-  isRightAnswer,
+  randomNumber, answer, isEvenNumber, isRightAnswer, getUserNameAndGreet,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
 let isCorrect = true;
 
-console.log('Welcome to the Brain Games!');
-const userName = getUserName();
-greeting(userName);
+const userName = getUserNameAndGreet();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
