@@ -34,6 +34,30 @@ const isRightAnswer = (userAnswer, userName, operationResult) => {
   return true;
 };
 
+const makeRandomArray = (array) => {
+  const randomArray = array;
+  const lengthOfArray = randomNumber(5, 10);
+  const arrayStep = randomNumber(1, 10);
+  let buffer = 0;
+
+  for (let i = 0; i < lengthOfArray; i += 1) {
+    buffer += arrayStep;
+    array.push(buffer);
+  }
+  return randomArray;
+};
+
+const makeFinalArray = (array) => {
+  const randomArray = array;
+  const skippedArrayStep = randomNumber(0, randomArray.length - 1);
+  const skippedElement = randomArray[skippedArrayStep];
+
+  randomArray[skippedArrayStep] = '..';
+  return [skippedElement, randomArray];
+};
+
 export {
-  randomNumber, answer, getUserNameAndGreet, isEvenNumber, isRightAnswer,
+  randomNumber, answer, getUserNameAndGreet,
+  isEvenNumber, isRightAnswer, makeRandomArray,
+  makeFinalArray,
 };
