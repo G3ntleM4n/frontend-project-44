@@ -56,8 +56,23 @@ const makeFinalArray = (array) => {
   return [skippedElement, randomArray];
 };
 
+const isPrimeNumber = (questionNumber) => {
+  if (questionNumber === 2) {
+    return true;
+  }
+
+  const halfNumber = questionNumber / 2;
+
+  for (let i = 2; i <= halfNumber; i += 1) {
+    if (questionNumber % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
 export {
   randomNumber, answer, getUserNameAndGreet,
   isEvenNumber, isRightAnswer, makeRandomArray,
-  makeFinalArray,
+  makeFinalArray, isPrimeNumber,
 };
