@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import {
-  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
+  isRightAnswer, getUserNameAndGreet,
   isPrimeNumber,
+  getQuestionNumberAndUserAnswer,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
@@ -12,9 +13,8 @@ const userName = getUserNameAndGreet();
 console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
-  const questionNumber = randomNumber(1, 100);
+  const [questionNumber, userAnswer] = getQuestionNumberAndUserAnswer;
   console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
 
   if (isPrimeNumber(questionNumber)) {
     const rightAnswer = 'yes';

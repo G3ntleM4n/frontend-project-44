@@ -18,6 +18,12 @@ const answer = () => {
   return answerString;
 };
 
+const getQuestionNumberAndUserAnswer = () => {
+  const questionNumber = randomNumber(1, 100);
+  const userAnswer = answer().toLowerCase();
+  return [questionNumber, userAnswer];
+};
+
 const isEvenNumber = (questionNumber) => {
   if (questionNumber % 2 === 0) {
     return true;
@@ -94,7 +100,7 @@ const isPrimeNumber = (questionNumber) => {
 };
 
 export {
-  randomNumber, answer, getUserNameAndGreet,
+  randomNumber, answer, getQuestionNumberAndUserAnswer, getUserNameAndGreet,
   isEvenNumber, isRightAnswer, makeRandomArray,
   makeFinalArray, isPrimeNumber, gcd,
 };
