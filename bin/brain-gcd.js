@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import brainGcdLogic from '../src/games/brain-gcd-module.js';
 import {
-  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
-  gcd,
+  getUserNameAndGreet,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
@@ -12,15 +12,7 @@ const userName = getUserNameAndGreet();
 console.log('What is the result of the expression?');
 
 while (counterOfCorrectAnswers < 3) {
-  const questionNum1 = randomNumber(1, 100);
-  const questionNum2 = randomNumber(1, 100);
-
-  console.log(`Question: ${questionNum1} ${questionNum2}`);
-
-  const userAnswer = +answer();
-
-  const gcdResult = gcd(questionNum1, questionNum2);
-  isCorrect = isRightAnswer(userAnswer, userName, gcdResult);
+  isCorrect = brainGcdLogic(isCorrect, userName);
 
   if (isCorrect) {
     counterOfCorrectAnswers += 1;

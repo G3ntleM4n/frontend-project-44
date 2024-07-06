@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
+import brainCalcLogic from '../src/games/brain-calc-module.js';
 import {
-  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
+  getUserNameAndGreet,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
@@ -11,41 +12,7 @@ const userName = getUserNameAndGreet();
 console.log('What is the result of the expression?');
 
 while (counterOfCorrectAnswers < 3) {
-  const questionNum1 = randomNumber(1, 100);
-  const questionNum2 = randomNumber(1, 10);
-  const questionOperation = randomNumber(1, 3);
-  let questionOperator = '';
-
-  switch (questionOperation) {
-    case 1:
-      questionOperator = '+';
-      break;
-    case 2:
-      questionOperator = '-';
-      break;
-    case 3:
-      questionOperator = '*';
-      break;
-    default:
-      break;
-  }
-
-  console.log(`Question: ${questionNum1} ${questionOperator} ${questionNum2}`);
-
-  const userAnswer = +answer();
-
-  if (questionOperation === 1) {
-    const summationResult = questionNum1 + questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, summationResult);
-  }
-  if (questionOperation === 2) {
-    const subtractionResult = questionNum1 - questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, subtractionResult);
-  }
-  if (questionOperation === 3) {
-    const multiplicationResult = questionNum1 * questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, multiplicationResult);
-  }
+  isCorrect = brainCalcLogic(isCorrect, userName);
 
   if (isCorrect) {
     counterOfCorrectAnswers += 1;

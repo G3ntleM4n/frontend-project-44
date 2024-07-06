@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import brainPrimeLogic from '../src/games/brain-prime-module.js';
 import {
-  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
-  isPrimeNumber,
+  getUserNameAndGreet,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
@@ -12,17 +12,7 @@ const userName = getUserNameAndGreet();
 console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
-  const questionNumber = randomNumber(1, 100);
-  console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
-
-  if (isPrimeNumber(questionNumber)) {
-    const rightAnswer = 'yes';
-    isCorrect = isRightAnswer(userAnswer, userName, rightAnswer);
-  } else if (!isPrimeNumber(questionNumber)) {
-    const rightAnswer = 'no';
-    isCorrect = isRightAnswer(userAnswer, userName, rightAnswer);
-  }
+  isCorrect = brainPrimeLogic(isCorrect, userName);
 
   if (isCorrect) {
     counterOfCorrectAnswers += 1;

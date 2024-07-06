@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import brainProgressionLogic from '../src/games/brain-progression-module.js';
 import {
-  answer, getUserNameAndGreet, isRightAnswer,
-  makeFinalArray, makeRandomArray,
+  getUserNameAndGreet,
 } from '../src/index.js';
 
 const array = [];
@@ -14,14 +14,7 @@ const userName = getUserNameAndGreet();
 console.log('What number is missing in the progression?');
 
 while (counterOfCorrectAnswers < 3) {
-  const randomArray = makeRandomArray(array);
-  const [skippedElement, finalArray] = makeFinalArray(randomArray);
-
-  console.log(`Question: ${finalArray.join(' ')}`);
-  finalArray.splice(0, finalArray.length); // cleans array
-
-  const userAnswer = +answer();
-  isCorrect = isRightAnswer(userAnswer, userName, skippedElement);
+  isCorrect = brainProgressionLogic(isCorrect, userName, array);
 
   if (isCorrect) {
     counterOfCorrectAnswers += 1;
