@@ -1,12 +1,10 @@
 import {
-  answer, isEvenNumber, isRightAnswer, randomNumber,
+  getQuestionAndAnswer, isEvenNumber, isRightAnswer,
 } from '../index.js';
 
 const brainEvenLogic = (isAnswerCorrect, userName) => {
   let isCorrect = isAnswerCorrect;
-  const questionNumber = randomNumber(1, 100);
-  console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
+  const { questionNumber, userAnswer } = getQuestionAndAnswer();
 
   if (isEvenNumber(questionNumber)) {
     const rightAnswer = 'yes';

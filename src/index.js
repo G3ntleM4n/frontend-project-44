@@ -18,13 +18,6 @@ const answer = () => {
   return answerString;
 };
 
-const getQuestionNumberAndUserAnswer = () => {
-  const questionNumber = randomNumber(1, 100);
-  console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
-  return [questionNumber, userAnswer];
-};
-
 const isEvenNumber = (questionNumber) => {
   if (questionNumber % 2 === 0) {
     return true;
@@ -91,7 +84,6 @@ const isPrimeNumber = (questionNumber) => {
   }
 
   const halfNumber = questionNumber / 2;
-
   for (let i = 2; i <= halfNumber; i += 1) {
     if (questionNumber % i === 0) {
       return false;
@@ -100,8 +92,15 @@ const isPrimeNumber = (questionNumber) => {
   return true;
 };
 
+const getQuestionAndAnswer = () => {
+  const questionNumber = randomNumber(1, 100);
+  console.log(`Question: ${questionNumber}`);
+  const userAnswer = answer().toLowerCase();
+  return { questionNumber, userAnswer };
+};
+
 export {
-  randomNumber, answer, getQuestionNumberAndUserAnswer, getUserNameAndGreet,
+  randomNumber, answer, getUserNameAndGreet,
   isEvenNumber, isRightAnswer, makeRandomArray,
-  makeFinalArray, isPrimeNumber, gcd,
+  makeFinalArray, isPrimeNumber, gcd, getQuestionAndAnswer,
 };

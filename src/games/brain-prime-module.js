@@ -1,12 +1,10 @@
 import {
-  answer, isPrimeNumber, isRightAnswer, randomNumber,
+  getQuestionAndAnswer, isPrimeNumber, isRightAnswer,
 } from '../index.js';
 
 const brainPrimeLogic = (isAnswerCorrect, userName) => {
   let isCorrect = isAnswerCorrect;
-  const questionNumber = randomNumber(1, 100);
-  console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
+  const { questionNumber, userAnswer } = getQuestionAndAnswer();
 
   if (isPrimeNumber(questionNumber)) {
     const rightAnswer = 'yes';
