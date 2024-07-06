@@ -1,10 +1,6 @@
 import { answer, isRightAnswer, randomNumber } from '../index.js';
 
-const brainCalcLogic = (isAnswerCorrect, userName) => {
-  let isCorrect = isAnswerCorrect;
-  const questionNum1 = randomNumber(1, 100);
-  const questionNum2 = randomNumber(1, 10);
-  const questionOperation = randomNumber(1, 3);
+const getQuestionOperator = (questionOperation) => {
   let questionOperator = '';
 
   switch (questionOperation) {
@@ -21,8 +17,16 @@ const brainCalcLogic = (isAnswerCorrect, userName) => {
       console.log('Something went wrong!');
       break;
   }
+  return questionOperator;
+};
 
-  console.log(`Question: ${questionNum1} ${questionOperator} ${questionNum2}`);
+const brainCalcLogic = (isAnswerCorrect, userName) => {
+  let isCorrect = isAnswerCorrect;
+  const questionNum1 = randomNumber(1, 100);
+  const questionNum2 = randomNumber(1, 10);
+  const questionOperation = randomNumber(1, 3);
+
+  console.log(`Question: ${questionNum1} ${getQuestionOperator(questionOperation)} ${questionNum2}`);
 
   const userAnswer = +answer();
 
@@ -40,4 +44,5 @@ const brainCalcLogic = (isAnswerCorrect, userName) => {
   }
   return isCorrect;
 };
+
 export default brainCalcLogic;
