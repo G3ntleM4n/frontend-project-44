@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {
-  randomNumber, answer, isEvenNumber, isRightAnswer, getUserNameAndGreet,
+  randomNumber, answer, isRightAnswer, getUserNameAndGreet,
   isPrimeNumber,
 } from '../src/index.js';
 
