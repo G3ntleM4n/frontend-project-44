@@ -2,6 +2,7 @@
 
 import {
   randomNumber, answer, isRightAnswer, getUserNameAndGreet,
+  gcd,
 } from '../src/index.js';
 
 let counterOfCorrectAnswers = 0;
@@ -17,20 +18,6 @@ while (counterOfCorrectAnswers < 3) {
   console.log(`Question: ${questionNum1} ${questionNum2}`);
 
   const userAnswer = +answer();
-
-  //  Euclidean algorithm
-  const gcd = (number1, number2) => {
-    let firstNumber = number1;
-    let secondNumber = number2;
-    while (firstNumber > 0 && secondNumber > 0) {
-      if (firstNumber >= secondNumber) {
-        firstNumber %= secondNumber;
-      } else {
-        secondNumber %= firstNumber;
-      }
-    }
-    return Math.max(firstNumber, secondNumber);
-  };
 
   const gcdResult = gcd(questionNum1, questionNum2);
   isCorrect = isRightAnswer(userAnswer, userName, gcdResult);

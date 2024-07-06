@@ -56,6 +56,28 @@ const makeFinalArray = (array) => {
   return [skippedElement, randomArray];
 };
 
+const changeNumbersForGcd = (number1, number2) => {
+  let firstNumber = number1;
+  let secondNumber = number2;
+
+  if (firstNumber >= secondNumber) {
+    firstNumber %= secondNumber;
+  } else {
+    secondNumber %= firstNumber;
+  }
+  return [firstNumber, secondNumber];
+};
+
+//  Euclidean algorithm
+const gcd = (number1, number2) => {
+  let firstNumber = 0;
+  let secondNumber = 0;
+  while (number1 > 0 && number2 > 0) {
+    [firstNumber, secondNumber] = changeNumbersForGcd(number1, number2);
+  }
+  return Math.max(firstNumber, secondNumber);
+};
+
 const isPrimeNumber = (questionNumber) => {
   if (questionNumber === 2) {
     return true;
@@ -74,5 +96,5 @@ const isPrimeNumber = (questionNumber) => {
 export {
   randomNumber, answer, getUserNameAndGreet,
   isEvenNumber, isRightAnswer, makeRandomArray,
-  makeFinalArray, isPrimeNumber,
+  makeFinalArray, isPrimeNumber, gcd,
 };
