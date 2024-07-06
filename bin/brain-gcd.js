@@ -19,17 +19,17 @@ while (counterOfCorrectAnswers < 3) {
   const userAnswer = +answer();
 
   //  Euclidean algorithm
-  const gcd = (num1, num2) => {
-    let a = num1;
-    let b = num2;
-    while (a > 0 && b > 0) {
-      if (a >= b) {
-        a %= b;
+  const gcd = (number1, number2) => {
+    let firstNumber = number1;
+    let secondNumber = number2;
+    while (firstNumber > 0 && secondNumber > 0) {
+      if (firstNumber >= secondNumber) {
+        firstNumber %= secondNumber;
       } else {
-        b %= a;
+        secondNumber %= firstNumber;
       }
     }
-    return Math.max(a, b);
+    return Math.max(firstNumber, secondNumber);
   };
 
   const gcdResult = gcd(questionNum1, questionNum2);
