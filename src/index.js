@@ -20,6 +20,7 @@ const answer = () => {
 
 const getQuestionNumberAndUserAnswer = () => {
   const questionNumber = randomNumber(1, 100);
+  console.log(`Question: ${questionNumber}`);
   const userAnswer = answer().toLowerCase();
   return [questionNumber, userAnswer];
 };

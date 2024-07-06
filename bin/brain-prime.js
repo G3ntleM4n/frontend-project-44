@@ -13,8 +13,7 @@ const userName = getUserNameAndGreet();
 console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
-  const [questionNumber, userAnswer] = getQuestionNumberAndUserAnswer;
-  console.log(`Question: ${questionNumber}`);
+  const [questionNumber, userAnswer] = getQuestionNumberAndUserAnswer();
 
   if (isPrimeNumber(questionNumber)) {
     const rightAnswer = 'yes';

@@ -12,8 +12,7 @@ const userName = getUserNameAndGreet();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 while (counterOfCorrectAnswers < 3) {
-  const [questionNumber, userAnswer] = getQuestionNumberAndUserAnswer;
-  console.log(`Question: ${questionNumber}`);
+  const [questionNumber, userAnswer] = getQuestionNumberAndUserAnswer();
 
   if (isEvenNumber(questionNumber)) {
     const rightAnswer = 'yes';
