@@ -77,10 +77,10 @@ const changeNumbersForGcd = (number1, number2) => {
 
 //  Euclidean algorithm
 const gcd = (number1, number2) => {
-  let firstNumber = 0;
-  let secondNumber = 0;
-  while (number1 > 0 && number2 > 0) {
-    [firstNumber, secondNumber] = changeNumbersForGcd(number1, number2);
+  let firstNumber = number1;
+  let secondNumber = number2;
+  while (firstNumber > 0 && secondNumber > 0) {
+    [firstNumber, secondNumber] = changeNumbersForGcd(firstNumber, secondNumber);
   }
   return Math.max(firstNumber, secondNumber);
 };
