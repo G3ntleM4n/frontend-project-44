@@ -9,7 +9,7 @@ let counterOfCorrectAnswers = 0;
 let isCorrect = true;
 
 const userName = getUserNameAndGreet();
-console.log('What is the result of the expression?');
+console.log('Find the greatest common divisor of given numbers.');
 
 while (counterOfCorrectAnswers < 3) {
   isCorrect = brainGcdLogic(isCorrect, userName);
