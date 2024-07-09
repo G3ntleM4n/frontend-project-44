@@ -1,7 +1,6 @@
 import brainCalcLogic from './games/brain-calc-module.js';
-import brainEvenLogic from './games/brain-even-module.js';
+import brainEvenOrPrimeLogic from './games/brain-even-or-prime-module.js';
 import brainGcdLogic from './games/brain-gcd-module.js';
-import brainPrimeLogic from './games/brain-prime-module.js';
 import brainProgressionLogic from './games/brain-progression-module.js';
 import { getUserNameAndGreet } from './index.js';
 
@@ -9,7 +8,7 @@ export const chooseGame = (gameNumber, isCorrect, userName) => {
   let isAnswerCorrect = isCorrect;
   switch (gameNumber) {
     case 1:
-      isAnswerCorrect = brainEvenLogic(isCorrect, userName);
+      isAnswerCorrect = brainEvenOrPrimeLogic(isCorrect, userName, gameNumber);
       break;
     case 2:
       isAnswerCorrect = brainCalcLogic(isCorrect, userName);
@@ -21,7 +20,7 @@ export const chooseGame = (gameNumber, isCorrect, userName) => {
       isAnswerCorrect = brainProgressionLogic(isCorrect, userName);
       break;
     case 5:
-      isAnswerCorrect = brainPrimeLogic(isCorrect, userName);
+      isAnswerCorrect = brainEvenOrPrimeLogic(isCorrect, userName, gameNumber);
       break;
     default:
       console.log('Game does not exist!');
