@@ -82,6 +82,9 @@ export const isPrimeNumber = (questionNumber) => {
   if (questionNumber === 2) {
     return true;
   }
+  if (questionNumber === 1) {
+    return false;
+  }
 
   const halfNumber = questionNumber / 2;
   for (let i = 2; i <= halfNumber; i += 1) {
