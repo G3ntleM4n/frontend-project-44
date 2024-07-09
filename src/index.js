@@ -1,31 +1,31 @@
 import readlineSync from 'readline-sync';
 
-const getUserNameAndGreet = () => {
+export const getUserNameAndGreet = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
 };
 
-const randomNumber = (min, max) => {
+export const randomNumber = (min, max) => {
   const randNumber = Math.random() * (max - min + 1) + min;
   const finalNumber = Math.floor(randNumber);
   return finalNumber;
 };
 
-const answer = () => {
+export const answer = () => {
   const answerString = readlineSync.question('Your answer: ');
   return answerString;
 };
 
-const isEvenNumber = (questionNumber) => {
+export const isEvenNumber = (questionNumber) => {
   if (questionNumber % 2 === 0) {
     return true;
   }
   return false;
 };
 
-const isRightAnswer = (userAnswer, userName, operationResult) => {
+export const isRightAnswer = (userAnswer, userName, operationResult) => {
   if (userAnswer !== operationResult) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${operationResult}'.\nLet's try again, ${userName}!`);
     return false;
@@ -34,7 +34,7 @@ const isRightAnswer = (userAnswer, userName, operationResult) => {
   return true;
 };
 
-const makeRandomArray = (array) => {
+export const makeRandomArray = (array) => {
   const randomArray = array;
   const lengthOfArray = randomNumber(5, 10);
   const arrayStep = randomNumber(1, 10);
@@ -47,7 +47,7 @@ const makeRandomArray = (array) => {
   return randomArray;
 };
 
-const makeFinalArray = (array) => {
+export const makeFinalArray = (array) => {
   const randomArray = array;
   const skippedArrayStep = randomNumber(0, randomArray.length - 1);
   const skippedElement = randomArray[skippedArrayStep];
@@ -56,7 +56,7 @@ const makeFinalArray = (array) => {
   return [skippedElement, randomArray];
 };
 
-const changeNumbersForGcd = (number1, number2) => {
+export const changeNumbersForGcd = (number1, number2) => {
   let firstNumber = number1;
   let secondNumber = number2;
 
@@ -69,7 +69,7 @@ const changeNumbersForGcd = (number1, number2) => {
 };
 
 //  Euclidean algorithm
-const gcd = (number1, number2) => {
+export const gcd = (number1, number2) => {
   let firstNumber = number1;
   let secondNumber = number2;
   while (firstNumber > 0 && secondNumber > 0) {
@@ -78,7 +78,7 @@ const gcd = (number1, number2) => {
   return Math.max(firstNumber, secondNumber);
 };
 
-const isPrimeNumber = (questionNumber) => {
+export const isPrimeNumber = (questionNumber) => {
   if (questionNumber === 2) {
     return true;
   }
@@ -92,15 +92,9 @@ const isPrimeNumber = (questionNumber) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+export const getQuestionAndAnswer = () => {
   const questionNumber = randomNumber(1, 100);
   console.log(`Question: ${questionNumber}`);
   const userAnswer = answer().toLowerCase();
   return { questionNumber, userAnswer };
-};
-
-export {
-  randomNumber, answer, getUserNameAndGreet,
-  isEvenNumber, isRightAnswer, makeRandomArray,
-  makeFinalArray, isPrimeNumber, gcd, getQuestionAndAnswer,
 };
