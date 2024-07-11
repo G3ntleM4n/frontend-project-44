@@ -1,48 +1,39 @@
-import { answer, isRightAnswer, randomNumber } from '../index.js';
+import { randomNumber } from '../index.js';
+import { playGame } from '../shared-games-logic-module.js';
 
-const getQuestionOperator = (questionOperation) => {
-  let questionOperator = '';
+const getQuestion = (questionNum1, questionOperation, questionNum2) => {
+  let question = '';
+  let answer = 0;
 
   switch (questionOperation) {
     case 1:
-      questionOperator = '+';
+      question = `${questionNum1} + ${questionNum2}`;
+      answer = questionNum1 + questionNum2;
       break;
     case 2:
-      questionOperator = '-';
+      question = `${questionNum1} - ${questionNum2}`;
+      answer = questionNum1 - questionNum2;
       break;
     case 3:
-      questionOperator = '*';
+      question = `${questionNum1} * ${questionNum2}`;
+      answer = questionNum1 * questionNum2;
       break;
     default:
       console.log('Something went wrong!');
       break;
   }
-  return questionOperator;
+  return [question, answer];
 };
 
-const brainCalcLogic = (isAnswerCorrect, userName) => {
-  let isCorrect = isAnswerCorrect;
+export const brainCalcLogic = () => {
   const questionNum1 = randomNumber(1, 100);
   const questionNum2 = randomNumber(1, 10);
   const questionOperation = randomNumber(1, 3);
+  const [question, correctAnswer] = getQuestion(questionNum1, questionOperation, questionNum2);
 
-  console.log(`Question: ${questionNum1} ${getQuestionOperator(questionOperation)} ${questionNum2}`);
-
-  const userAnswer = +answer();
-
-  if (questionOperation === 1) {
-    const summationResult = questionNum1 + questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, summationResult);
-  }
-  if (questionOperation === 2) {
-    const subtractionResult = questionNum1 - questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, subtractionResult);
-  }
-  if (questionOperation === 3) {
-    const multiplicationResult = questionNum1 * questionNum2;
-    isCorrect = isRightAnswer(userAnswer, userName, multiplicationResult);
-  }
-  return isCorrect;
+  return [question, correctAnswer];
 };
 
-export default brainCalcLogic;
+export default () => {
+  playGame('What is the result of the expression?', brainCalcLogic);
+};
