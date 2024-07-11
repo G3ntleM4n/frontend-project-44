@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { playGame } from '../src/shared-games-logic-module.js';
+import playPrime from '../src/games/brain-prime-module.js';
 
-playGame(5);
+playPrime();
