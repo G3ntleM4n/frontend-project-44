@@ -1,19 +1,18 @@
 import {
-  answer, gcd, isRightAnswer, randomNumber,
+  gcd, randomNumber,
 } from '../index.js';
+import { playGame } from '../shared-games-logic-module.js';
 
-const brainGcdLogic = (isAnswerCorrect, userName) => {
-  let isCorrect = isAnswerCorrect;
+export const brainGcdLogic = () => {
   const questionNum1 = randomNumber(1, 100);
   const questionNum2 = randomNumber(1, 100);
 
-  console.log(`Question: ${questionNum1} ${questionNum2}`);
-
-  const userAnswer = +answer();
-
+  const question = `${questionNum1} ${questionNum2}`;
   const gcdResult = gcd(questionNum1, questionNum2);
-  isCorrect = isRightAnswer(userAnswer, userName, gcdResult);
 
-  return isCorrect;
+  return [question, gcdResult];
 };
-export default brainGcdLogic;
+
+export default () => {
+  playGame('Find the greatest common divisor of given numbers.', brainGcdLogic);
+};

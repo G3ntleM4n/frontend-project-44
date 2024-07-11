@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { playGame } from '../src/shared-games-logic-module.js';
+import playGcd from '../src/games/brain-gcd-module.js';
 
-playGame(3);
+playGcd();
