@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { playGame } from '../src/shared-games-logic-module.js';
+import playEven from '../src/games/brain-even-module.js';
 
-playGame(1);
+playEven();
