@@ -13,7 +13,7 @@ export const randomNumber = (min, max) => {
   return finalNumber;
 };
 
-export const answer = () => {
+export const getAnswer = () => {
   const answerString = readlineSync.question('Your answer: ');
   return answerString;
 };
@@ -26,8 +26,11 @@ export const isEvenNumber = (questionNumber) => {
 };
 
 export const isRightAnswer = (userAnswer, userName, operationResult) => {
-  if (userAnswer !== operationResult) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${operationResult}'.\nLet's try again, ${userName}!`);
+  const answer = userAnswer.toString();
+  const rightAnswer = operationResult.toString();
+
+  if (answer !== rightAnswer) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
     return false;
   }
   console.log('Correct!');
@@ -93,11 +96,4 @@ export const isPrimeNumber = (questionNumber) => {
     }
   }
   return true;
-};
-
-export const getQuestionAndAnswer = () => {
-  const questionNumber = randomNumber(1, 100);
-  console.log(`Question: ${questionNumber}`);
-  const userAnswer = answer().toLowerCase();
-  return { questionNumber, userAnswer };
 };
