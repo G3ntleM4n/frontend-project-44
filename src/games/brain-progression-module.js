@@ -1,19 +1,19 @@
 import {
-  answer, isRightAnswer, makeFinalArray, makeRandomArray,
+  makeFinalArray, makeRandomArray,
 } from '../index.js';
+import { playGame } from '../shared-games-logic-module.js';
 
-const brainProgressionLogic = (isAnswerCorrect, userName) => {
-  let isCorrect = isAnswerCorrect;
+export const brainProgressionLogic = () => {
   const array = [];
   const randomArray = makeRandomArray(array);
   const [skippedElement, finalArray] = makeFinalArray(randomArray);
 
-  console.log(`Question: ${finalArray.join(' ')}`);
+  const question = finalArray.join(' ');
   finalArray.splice(0, finalArray.length); // cleans array
 
-  const userAnswer = +answer();
-  isCorrect = isRightAnswer(userAnswer, userName, skippedElement);
-
-  return isCorrect;
+  return [question, skippedElement];
 };
-export default brainProgressionLogic;
+
+export default () => {
+  playGame('What number is missing in the progression?', brainProgressionLogic);
+};

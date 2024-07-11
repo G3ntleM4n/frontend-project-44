@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { playGame } from '../src/shared-games-logic-module.js';
+import playProgression from '../src/games/brain-progression-module.js';
 
-playGame(4);
+playProgression();
