@@ -1,35 +1,34 @@
 import { randomNumber } from '../index.js';
 import { playGame } from '../shared-games-logic-module.js';
 
-const getQuestion = (questionNum1, questionOperation, questionNum2) => {
-  let question = '';
+const getOperator = () => {
+  const operatorArray = ['+', '-', '*'];
+  const indexOfOperatorArray = randomNumber(0, 2);
+
+  return operatorArray[indexOfOperatorArray];
+};
+
+const getAnswer = (operator, questionNum1, questionNum2) => {
   let answer = 0;
 
-  switch (questionOperation) {
-    case 1:
-      question = `${questionNum1} + ${questionNum2}`;
-      answer = questionNum1 + questionNum2;
-      break;
-    case 2:
-      question = `${questionNum1} - ${questionNum2}`;
-      answer = questionNum1 - questionNum2;
-      break;
-    case 3:
-      question = `${questionNum1} * ${questionNum2}`;
-      answer = questionNum1 * questionNum2;
-      break;
-    default:
-      console.log('Something went wrong!');
-      break;
-  }
-  return [question, answer];
+  if (operator === '+') {
+    answer = questionNum1 + questionNum2;
+  } else if (operator === '-') {
+    answer = questionNum1 - questionNum2;
+  } else if (operator === '*') {
+    answer = questionNum1 * questionNum2;
+  } else { console.log('Error: operator not found!'); }
+
+  return answer;
 };
 
 export const brainCalcLogic = () => {
   const questionNum1 = randomNumber(1, 100);
   const questionNum2 = randomNumber(1, 10);
-  const questionOperation = randomNumber(1, 3);
-  const [question, correctAnswer] = getQuestion(questionNum1, questionOperation, questionNum2);
+  const operator = getOperator();
+
+  const question = `${questionNum1} ${operator} ${questionNum2}`;
+  const correctAnswer = getAnswer(operator, questionNum1, questionNum2);
 
   return [question, correctAnswer];
 };
