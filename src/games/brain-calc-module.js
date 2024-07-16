@@ -1,5 +1,5 @@
 import { randomNumber } from '../index.js';
-import { playGame } from '../shared-games-logic-module.js';
+import playGame from '../shared-games-logic-module.js';
 
 const getOperator = () => {
   const operatorArray = ['+', '-', '*'];

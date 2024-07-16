@@ -1,7 +1,7 @@
 import {
   isPrimeNumber, randomNumber,
 } from '../index.js';
-import { playGame } from '../shared-games-logic-module.js';
+import playGame from '../shared-games-logic-module.js';
 
 export const brainPrimeLogic = () => {
   const question = randomNumber(1, 100);

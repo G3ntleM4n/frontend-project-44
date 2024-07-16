@@ -1,7 +1,7 @@
 import {
   gcd, randomNumber,
 } from '../index.js';
-import { playGame } from '../shared-games-logic-module.js';
+import playGame from '../shared-games-logic-module.js';
 
 export const brainGcdLogic = () => {
   const questionNum1 = randomNumber(1, 100);
