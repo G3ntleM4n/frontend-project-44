@@ -71,14 +71,11 @@ export const changeNumbersForGcd = (number1, number2) => {
   return [firstNumber, secondNumber];
 };
 
-//  Euclidean algorithm
 export const gcd = (number1, number2) => {
-  let firstNumber = number1;
-  let secondNumber = number2;
-  while (firstNumber > 0 && secondNumber > 0) {
-    [firstNumber, secondNumber] = changeNumbersForGcd(firstNumber, secondNumber);
+  if (!number2) {
+    return number1;
   }
-  return Math.max(firstNumber, secondNumber);
+  return gcd(number2, number1 % number2);
 };
 
 export const isPrimeNumber = (questionNumber) => {
