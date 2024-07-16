@@ -8,7 +8,7 @@ const getOperator = () => {
   return operatorArray[indexOfOperatorArray];
 };
 
-const getAnswer = (operator, questionNum1, questionNum2) => {
+const calculateOperation = (operator, questionNum1, questionNum2) => {
   let answer = 0;
 
   if (operator === '+') {
@@ -28,7 +28,7 @@ export const brainCalcLogic = () => {
   const operator = getOperator();
 
   const question = `${questionNum1} ${operator} ${questionNum2}`;
-  const correctAnswer = getAnswer(operator, questionNum1, questionNum2);
+  const correctAnswer = calculateOperation(operator, questionNum1, questionNum2);
 
   return [question, correctAnswer];
 };
