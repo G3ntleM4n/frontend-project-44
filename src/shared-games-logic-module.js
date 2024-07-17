@@ -9,7 +9,6 @@ const playGame = (description, gameData) => {
   for (let i = 0; i < maxRounds; i += 1) {
     const [question, correctAnswer] = gameData();
     console.log(`Question: ${question}`);
-    console.log(`answer: ${correctAnswer}`);
     const userAnswer = getAnswer();
     isCorrect = isRightAnswer(userAnswer, userName, correctAnswer);
 
