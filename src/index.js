@@ -59,18 +59,6 @@ export const makeFinalArray = (array) => {
   return [skippedElement, randomArray];
 };
 
-export const changeNumbersForGcd = (number1, number2) => {
-  let firstNumber = number1;
-  let secondNumber = number2;
-
-  if (firstNumber >= secondNumber) {
-    firstNumber %= secondNumber;
-  } else {
-    secondNumber %= firstNumber;
-  }
-  return [firstNumber, secondNumber];
-};
-
 export const gcd = (number1, number2) => {
   if (!number2) {
     return number1;
