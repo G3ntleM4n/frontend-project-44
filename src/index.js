@@ -30,10 +30,8 @@ export const isRightAnswer = (userAnswer, userName, operationResult) => {
   const rightAnswer = operationResult.toString();
 
   if (answer !== rightAnswer) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
     return false;
   }
-  console.log('Correct!');
   return true;
 };
 
