@@ -1,7 +1,14 @@
 import {
-  isEvenNumber, randomNumber,
+  randomNumber,
 } from '../index.js';
 import playGame from '../shared-games-logic-module.js';
+
+export const isEvenNumber = (questionNumber) => {
+  if (questionNumber % 2 === 0) {
+    return true;
+  }
+  return false;
+};
 
 export const brainEvenLogic = () => {
   const question = randomNumber(1, 100);

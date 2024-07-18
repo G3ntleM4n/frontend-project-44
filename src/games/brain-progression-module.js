@@ -9,7 +9,6 @@ export const makeRandomArray = (lengthOfArray, arrayStep) => {
     buffer += arrayStep;
     array.push(buffer);
   }
-
   return array;
 };
 
