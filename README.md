@@ -1,6 +1,9 @@
-### Hexlet tests and linter status:
+### Hexlet tests and linter status
+
 [![Actions Status](https://github.com/G3ntleM4n/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/G3ntleM4n/frontend-project-44/actions)
-### CodeClimate Badges:
+
+### CodeClimate Badges
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/7d735a79f02ce3d770c6/maintainability)](https://codeclimate.com/github/G3ntleM4n/frontend-project-44/maintainability)
 
 # Brain Games
@@ -10,7 +13,7 @@
 ## List of games
 
 | Game | Command | Task |
-|---|---|---|
+| --- | --- | --- |
 | Calculator | `brain-calc` | Calculate the result of an arithmetic expression (`+`, `-`, `*`) |
 | Progression | `brain-progression` | Find the missing number in a numeric sequence |
 | Even number | `brain-even` | Determine whether a number is even (answer `yes`/`no`) |
@@ -27,7 +30,7 @@ Check whether Node.js is installed and see its version with:
 node -v
 ```
 
-If the command is not found, download and install Node.js from the official website: https://nodejs.org
+If the command is not found, download and install Node.js from the official website: <https://nodejs.org>
 
 ## Installation
 
@@ -129,8 +132,22 @@ frontend-project-44-main/
 
 ## Video examples of the games
 
-- [Brain-even](https://asciinema.org/a/orjnStCP9WKRs2RLzeAvJQwox)
-- [Brain-calc](https://asciinema.org/a/03Ok2V8stmaVIw1qZ3zi1hsTm)
-- [Brain-gcd](https://asciinema.org/a/ilCvmqnX73NQdfHLDeGJftQg4)
-- [Brain-progression](https://asciinema.org/a/rXlpF0xmSdZeXWrrWv8GqnqEb)
-- [Brain-prime](https://asciinema.org/a/oBdDi3dj41r174zRYvL99aSBb)
+### Brain-even
+
+[![asciicast](https://asciinema.org/a/orjnStCP9WKRs2RLzeAvJQwox.svg)](https://asciinema.org/a/orjnStCP9WKRs2RLzeAvJQwox)
+
+### Brain-calc
+
+[![asciicast](https://asciinema.org/a/03Ok2V8stmaVIw1qZ3zi1hsTm.svg)](https://asciinema.org/a/03Ok2V8stmaVIw1qZ3zi1hsTm)
+
+### Brain-gcd
+
+[![asciicast](https://asciinema.org/a/ilCvmqnX73NQdfHLDeGJftQg4.svg)](https://asciinema.org/a/ilCvmqnX73NQdfHLDeGJftQg4)
+
+### Brain-progression
+
+[![asciicast](https://asciinema.org/a/rXlpF0xmSdZeXWrrWv8GqnqEb.svg)](https://asciinema.org/a/rXlpF0xmSdZeXWrrWv8GqnqEb)
+
+### Brain-prime
+
+[![asciicast](https://asciinema.org/a/oBdDi3dj41r174zRYvL99aSBb.svg)](https://asciinema.org/a/oBdDi3dj41r174zRYvL99aSBb)
