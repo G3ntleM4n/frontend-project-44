@@ -1,12 +1,8 @@
-### Hexlet tests and linter status
-
-[![Actions Status](https://github.com/G3ntleM4n/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/G3ntleM4n/frontend-project-44/actions)
-
-### CodeClimate Badges
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/7d735a79f02ce3d770c6/maintainability)](https://codeclimate.com/github/G3ntleM4n/frontend-project-44/maintainability)
-
 # Brain Games
+
+[![Actions Status](https://github.com/G3ntleM4n/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/G3ntleM4n/frontend-project-44/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/7d735a79f02ce3d770c6/maintainability)](https://codeclimate.com/github/G3ntleM4n/frontend-project-44/maintainability)
+
+[Русский](README.ru.md) | English
 
 **Brain Games** is a collection of five console games inspired by popular mobile brain-training apps. Each game asks the user three questions in a row. If all three answers are correct, the game is won. If any answer is wrong, the game ends immediately and invites the player to try again.
 
@@ -83,7 +79,7 @@ The other games work the same way: `brain-calc`, `brain-even`, `brain-gcd`, `bra
 
 ### Example: "Progression" game
 
-```
+```text
 $ brain-progression
 Welcome to the Brain Games!
 May I have your name? Roman
@@ -113,7 +109,7 @@ make publish   # dry-run package publish (npm publish --dry-run)
 
 ## Project structure
 
-```
+```text
 frontend-project-44-main/
 ├── bin/                 # executable files for each game (entry points)
 │   ├── brain-games.js
